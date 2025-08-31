@@ -1,0 +1,77 @@
+h1 { 
+    text-align: center;     /* centers the title */
+    color: #B3A369;         /* Georgia Tech gold */
+    font-family: Georgia, serif;  /* nice font style */
+    font-size: 3em;       /* make it bigger (default is ~2em) */
+    margin-top: 40px;     /* pushes it lower */
+}
+
+nav {
+  background-color: #003057; /* GT navy blue */
+  padding: 15px 0;
+}
+
+nav ul {
+  list-style: none;      /* removes bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;         /* makes links horizontal */
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;        /* spacing between items */
+}
+
+nav ul li a {
+  color: #B3A369;        /* GT gold */
+  text-decoration: none; /* removes underline */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: white;          /* hover effect */
+}
+.ask-ethan {
+    margin-left:40px; 
+    color:aquamarine;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.GroupPhoto {
+  text-align: center;
+  margin-top: 20px;
+}
+.GroupPhoto img {
+  display: block;
+  margin: 0 auto;  /* centers the image itself */
+  max-width: 80%;  /* keeps it from overflowing the screen */
+  height: auto;    /* keeps proportions */
+}
+.insta-link {
+  display: flex;              /* put image and text side by side */
+  align-items: center;        /* align vertically */
+  justify-content: center;    /* center the whole row */
+  gap: 10px;                  /* space between icon and text */
+  margin-top: 20px;
+}
+
+.insta-link img {
+  width: 40px;                /* adjust size of your icon */
+  height: auto;
+}
+
+.insta-link a {
+  color: #B3A369;             /* GT gold */
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.insta-link a:hover {
+  color: rgb(00, 37, 57);               /* hover effect */
+}
