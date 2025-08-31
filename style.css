@@ -1,3 +1,15 @@
+/* Race calendar meet links styling */
+.calendar .race-link {
+  color: var(--gt-gold) !important;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.15s;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.calendar .race-link:hover, .calendar .race-link:focus {
+  color: var(--gt-blue) !important;
+}
 /* ===============================
    Georgia Tech Running Club — UI
    =============================== */
