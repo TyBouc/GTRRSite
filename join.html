@@ -1,59 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Join | Georgia Tech Running Club</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Join | Georgia Tech Running Club</title>
+  <meta name="description" content="How to join Runnin’ Wreck at Georgia Tech — who can join, dues, first practice, and FAQs." />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Runnin' Wreck</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
-                    <li class="current"><a href="join.html">How to Join</a></li>
-                    <li><a href="results.html">Results & Records</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h2>Become a Member of Runnin' Wreck</h2>
-        <div class="step-by-step">
-            <h3>Step 1: Eligibility</h3>
-            <p>You must be a current student at Georgia Tech to join the club.</p>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div id="branding" class="branding">
+        <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
+          <span class="brand-mark" aria-hidden="true">🏃‍♀️</span>
+          <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
+        </a>
+      </div>
 
-            <h3>Step 2: Come to a Practice</h3>
-            <p>The best way to get started is to show up to one of our practices! Check out the <a href="schedule.html">schedule</a> to find a time that works for you. We are always excited to welcome new faces.</p>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
 
-            <h3>Step 3: Pay Dues</h3>
-            <p>Dues are collected at the beginning of each semester. The amount will be announced at the first few meetings and on our social media. Dues help cover race entry fees, travel, and social events.</p>
-        </div>
-
-        <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <h3>How fast do I need to be?</h3>
-            <p>We welcome all paces! We have a wide range of runners, and you will always find someone to run with.</p>
-            <h3>What should I bring to my first practice?</h3>
-            <p>Just bring yourself, proper running shoes, and a water bottle. Be ready to run and have fun!</p>
-            <h3>Are there tryouts?</h3>
-            <p>There are no tryouts to be a general member of the club. Everyone is welcome to join our practices.</p>
-        </div>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li class="current"><a aria-current="page" href="join.html">How to Join</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>Georgia Tech Running Club &copy; 2025</p>
-        <p><a href="https://www.gatech.edu" target="_blank">Georgia Tech</a></p>
-    </footer>
+  <section class="hero hero--thin">
+    <div class="container">
+      <h1 class="page-title">Join Runnin’ Wreck</h1>
+      <p class="page-tagline">All paces welcome. Show up, say hi, and run with us.</p>
+    </div>
+  </section>
+
+  <main id="main" class="container content" role="main">
+    <!-- Steps -->
+    <section class="card card--pad-lg" aria-labelledby="steps-title">
+      <h2 id="steps-title">Three Easy Steps</h2>
+      <ol class="list-unstyled" style="counter-reset: step">
+        <li style="margin-bottom: var(--space-3)">
+          <strong>1) Check eligibility</strong><br />
+          You should be a current Georgia Tech student. Grad and undergrad are welcome.
+        </li>
+        <li style="margin-bottom: var(--space-3)">
+          <strong>2) Come to a practice</strong><br />
+          Pick any session on our <a href="schedule.html">practice schedule</a> and introduce yourself when you arrive. We’ll help you find a pace group.
+        </li>
+        <li>
+          <strong>3) Pay dues</strong><br />
+          Dues are collected each semester to support race entries, travel, and socials. Amount and instructions are announced at the start of term.
+        </li>
+      </ol>
+
+      <p style="margin-top: var(--space-3)">
+        <a class="button" href="schedule.html">See Practice Times</a>
+        <span style="display:inline-block; width:.5rem" aria-hidden="true"></span>
+        <a class="button" href="mailto:officer.email@gatech.edu">Email an Officer</a>
+      </p>
+    </section>
+
+    <!-- What to expect / first practice -->
+    <section class="card card--pad-lg" aria-labelledby="first-title" style="margin-top: var(--space-6)">
+      <h2 id="first-title">Your First Practice</h2>
+      <ul class="list-unstyled">
+        <li><strong>Bring:</strong> running shoes, water bottle.</li>
+        <li><strong>Meet spot:</strong> Usually the Campanile (check the schedule for occasional changes).</li>
+        <li><strong>Pace groups:</strong> We split into groups so everyone has someone to run with.</li>
+        <li><strong>Weather:</strong> We run in light rain; lightning/heat may shift plans—watch announcements.</li>
+      </ul>
+    </section>
+
+    <!-- Dues & perks -->
+    <section class="card card--pad-lg" aria-labelledby="dues-title" style="margin-top: var(--space-6)">
+      <h2 id="dues-title">Dues &amp; Member Perks</h2>
+      <p>Semester dues help fund club operations. Membership typically includes:</p>
+      <ul class="list-unstyled">
+        <li>Subsidized race entries &amp; shared travel</li>
+        <li>Access to the competitive NIRCA team (optional)</li>
+        <li>Club socials and community events</li>
+        <li>Eligibility for leadership roles</li>
+      </ul>
+      <p class="muted">Exact amount and payment links are shared at the start of each semester.</p>
+    </section>
+
+    <!-- FAQs -->
+    <section aria-labelledby="faq-title" style="margin-top: var(--space-6)">
+      <div class="section-head">
+        <h2 id="faq-title">FAQs</h2>
+        <p class="muted">New here? Start with these.</p>
+      </div>
+
+      <div class="officer-grid">
+        <!-- Reuse card styling for simple Q/A tiles -->
+        <article class="officer-card" tabindex="0" aria-label="FAQ: Pace">
+          <img src="https://via.placeholder.com/120.png?text=🏃" alt="" aria-hidden="true" />
+          <h3 class="officer-name">How fast do I need to be?</h3>
+          <p class="officer-bio">All paces welcome! We form pace groups so everyone has company.</p>
+        </article>
+
+        <article class="officer-card" tabindex="0" aria-label="FAQ: What to bring">
+          <img src="https://via.placeholder.com/120.png?text=🧴" alt="" aria-hidden="true" />
+          <h3 class="officer-name">What should I bring?</h3>
+          <p class="officer-bio">Running shoes and a water bottle are perfect for day one.</p>
+        </article>
+
+        <article class="officer-card" tabindex="0" aria-label="FAQ: Tryouts">
+          <img src="https://via.placeholder.com/120.png?text=✅" alt="" aria-hidden="true" />
+          <h3 class="officer-name">Are there tryouts?</h3>
+          <p class="officer-bio">No tryouts for general members. Competitive team details are shared in season.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="card card--pad-lg" aria-labelledby="cta-title" style="margin-top: var(--space-6)">
+      <h2 id="cta-title">Ready to run?</h2>
+      <p>Pick a practice, show up, and say hello. That’s it.</p>
+      <p>
+        <a class="button" href="schedule.html">Find a Practice</a>
+        <span style="display:inline-block; width:.5rem" aria-hidden="true"></span>
+        <a class="button" href="mailto:officer.email@gatech.edu">Ask a Question</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Georgia Tech Running Club &copy; 2025</p>
+      <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle with a11y
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

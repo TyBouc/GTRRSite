@@ -1,68 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Georgia Tech Running Club</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1" />
+  <title>About Us | Georgia Tech Running Club</title>
+  <meta name="description" content="Runnin’ Wreck — a welcoming running community at Georgia Tech for all paces. Meet the officers, our mission, and competitive team." />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Runnin' Wreck</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="current"><a href="about.html">About Us</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
-                    <li><a href="join.html">How to Join</a></li>
-                    <li><a href="results.html">Results & Records</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h2>Our Mission</h2>
-        <p>Runnin' Wreck is a club for all who run. Whether you have been running since the fifth grade or have only run one time in that charity 5k, there will be someone to run with. We aim to provide a welcoming community for runners of all abilities, from casual joggers to competitive racers.</p>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div id="branding" class="branding">
+        <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
+          <span class="brand-mark" aria-hidden="true">🏃‍♀️</span>
+          <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
+        </a>
+      </div>
 
-        <h2>Meet the Officers</h2>
-        <div class="officer-grid">
-            <div class="officer-card">
-                <img src="https://via.placeholder.com/150" alt="Officer Photo">
-                <h3>Officer Name</h3>
-                <p><strong>President</strong></p>
-                <p>A brief, friendly bio will go here.</p>
-                <p><em>officer.email@gatech.edu</em></p>
-            </div>
-             <div class="officer-card">
-                <img src="https://via.placeholder.com/150" alt="Officer Photo">
-                <h3>Officer Name</h3>
-                <p><strong>Vice President</strong></p>
-                <p>A brief, friendly bio will go here.</p>
-                <p><em>officer.email@gatech.edu</em></p>
-            </div>
-             <div class="officer-card">
-                <img src="https://via.placeholder.com/150" alt="Officer Photo">
-                <h3>Officer Name</h3>
-                <p><strong>Treasurer</strong></p>
-                <p>A brief, friendly bio will go here.</p>
-                <p><em>officer.email@gatech.edu</em></p>
-            </div>
-        </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
 
-        <h2>Competitive Team</h2>
-        <p>For those looking to compete, Runnin' Wreck participates in the National Intercollegiate Running Club Association (NIRCA). We travel to races throughout the semester, competing against other university club teams in cross country, track and field, and road races.</p>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="current"><a aria-current="page" href="about.html">About Us</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="join.html">How to Join</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>Georgia Tech Running Club &copy; 2025</p>
-        <p><a href="https://www.gatech.edu" target="_blank">Georgia Tech</a></p>
-    </footer>
+  <!-- Optional subtle hero banner -->
+  <section class="hero hero--thin">
+    <div class="container">
+      <h1 class="page-title">About Runnin’ Wreck</h1>
+      <p class="page-tagline">A community for every pace — from first 5k to fast finishes.</p>
+    </div>
+  </section>
+
+  <main id="main" class="container content" role="main">
+    <section aria-labelledby="mission-title" class="card card--pad-lg">
+      <h2 id="mission-title">Our Mission</h2>
+      <p>Runnin' Wreck is a club for all who run. Whether you have been running since the fifth grade or have only run one time in that charity 5k, there will be someone to run with. We aim to provide a welcoming community for runners of all abilities, from casual joggers to competitive racers.</p>
+    </section>
+
+    <section aria-labelledby="officers-title">
+      <div class="section-head">
+        <h2 id="officers-title">Meet the Officers</h2>
+        <p class="muted">Tap a card to email.</p>
+      </div>
+
+      <div class="officer-grid">
+        <!-- Officer Card -->
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Ethan Maraldo" loading="lazy" />
+          <h3 class="officer-name">Ethan Maraldo</h3>
+          <p class="officer-role">President</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Ty Boucino" loading="lazy" />
+          <h3 class="officer-name">Ty Boucino</h3>
+          <p class="officer-role">Race Coordinator</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Nathan Saliceti" loading="lazy" />
+          <h3 class="officer-name">Nathan Saliceti</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Malena Vila" loading="lazy" />
+          <h3 class="officer-name">Malena Vila</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Kailyn Neal" loading="lazy" />
+          <h3 class="officer-name">Kailyn Neal</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Jocelin Hunter" loading="lazy" />
+          <h3 class="officer-name">Jocelin Hunter</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Sam Maas" loading="lazy" />
+          <h3 class="officer-name">Sam Maas</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Declan Adams" loading="lazy" />
+          <h3 class="officer-name">Declan Adams</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Issac Chambers" loading="lazy" />
+          <h3 class="officer-name">Issac Chambers</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Isabel Matteo" loading="lazy" />
+          <h3 class="officer-name">Isabel Matteo</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+
+        <article class="officer-card" tabindex="0">
+          <img src="placeHolderPerson.png" alt="Portrait of Dominick De Lillo" loading="lazy" />
+          <h3 class="officer-name">Dominick De Lillo</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-bio">A brief, friendly bio will go here.</p>
+          <p><a class="officer-email" href="mailto:officer.email@gatech.edu">officer.email@gatech.edu</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="comp-title" class="card card--pad-lg">
+      <h2 id="comp-title">Competitive Team</h2>
+      <p>For those looking to compete, Runnin' Wreck participates in the National Intercollegiate Running Club Association (NIRCA). We travel to races throughout the semester, competing against other university club teams in cross country, track and field, and road races.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Georgia Tech Running Club &copy; 2025</p>
+      <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle with a11y
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

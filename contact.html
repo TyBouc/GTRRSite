@@ -1,67 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Georgia Tech Running Club</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Georgia Tech Running Club</title>
+  <meta name="description" content="Contact the Georgia Tech Running Club — email us, follow on socials, or message the officers directly." />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Runnin' Wreck</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
-                    <li><a href="join.html">How to Join</a></li>
-                    <li><a href="results.html">Results & Records</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li class="current"><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h2>Get In Touch</h2>
-        <p>Have questions? We'd love to hear from you. Reach out to us via email or our social media channels.</p>
-        
-        <p><strong>General Inquiries:</strong> <a href="mailto:gtrunninwreck@gmail.com">gtrunninwreck@gmail.com</a></p>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div id="branding" class="branding">
+        <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
+          <span class="brand-mark" aria-hidden="true">🏃‍♀️</span>
+          <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
+        </a>
+      </div>
 
-        <h3>Social Media</h3>
-        <p>
-            <a href="https://www.instagram.com/gtrunninwreck/" target="_blank">Instagram</a> | 
-            <a href="#" target="_blank">Facebook (Link not found)</a>
-        </p>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
 
-        <div class="contact-form">
-            <h3>Send us a Message</h3>
-            <form>
-                <div>
-                    <label>Name</label><br>
-                    <input type="text" placeholder="Your Name">
-                </div>
-                 <div>
-                    <label>Email</label><br>
-                    <input type="email" placeholder="Your Email">
-                </div>
-                 <div>
-                    <label>Message</label><br>
-                    <textarea placeholder="Your Message"></textarea>
-                </div>
-                <button type="submit" class="button">Send</button>
-            </form>
-        </div>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="join.html">How to Join</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="current"><a aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>Georgia Tech Running Club &copy; 2025</p>
-        <p><a href="https://www.gatech.edu" target="_blank">Georgia Tech</a></p>
-    </footer>
+  <section class="hero hero--thin">
+    <div class="container">
+      <h1 class="page-title">Contact Us</h1>
+      <p class="page-tagline">Questions? Reach out via email, socials, or the form below.</p>
+    </div>
+  </section>
+
+  <main id="main" class="container content" role="main">
+    <!-- Contact info -->
+    <section class="card card--pad-lg" aria-labelledby="contact-info-title">
+      <h2 id="contact-info-title">Get in Touch</h2>
+      <p><strong>Email:</strong> <a href="mailto:gtrunninwreck@gmail.com">gtrunninwreck@gmail.com</a></p>
+      <p>
+        <strong>Socials:</strong>
+        <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener">Instagram</a>
+        &nbsp;|&nbsp;
+        <a href="#" aria-disabled="true">Facebook (coming soon)</a>
+      </p>
+    </section>
+
+    <!-- Contact form -->
+    <section class="card card--pad-lg" aria-labelledby="form-title" style="margin-top: var(--space-6)">
+      <h2 id="form-title">Send a Message</h2>
+      <form class="contact-form" action="mailto:gtrunninwreck@gmail.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+        </div>
+
+        <button class="button" type="submit">Send</button>
+      </form>
+      <p class="muted" style="margin-top:.75rem">Prefer email? Contact us at <a href="mailto:gtrunninwreck@gmail.com">gtrunninwreck@gmail.com</a>.</p>
+    </section>
+
+    <!-- Map -->
+    <section class="card card--pad-lg" aria-labelledby="map-title" style="margin-top: var(--space-6)">
+      <h2 id="map-title">Where We Meet</h2>
+      <p>Most runs meet at the Campanile; track workouts are at SAC Fields.</p>
+      <div class="map-wrap" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius: var(--radius-md);">
+        <iframe
+          title="Georgia Tech Campanile Map"
+          loading="lazy"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          src="https://www.google.com/maps?q=Georgia%20Tech%20Campanile&output=embed">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Georgia Tech Running Club &copy; 2025</p>
+      <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

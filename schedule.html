@@ -1,100 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule | Georgia Tech Running Club</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule | Georgia Tech Running Club</title>
+  <meta name="description" content="Practice times, meetup locations, and upcoming events for the Georgia Tech Running Club." />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Runnin' Wreck</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="current"><a href="schedule.html">Schedule</a></li>
-                    <li><a href="join.html">How to Join</a></li>
-                    <li><a href="results.html">Results & Records</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <h2>Practice & Event Calendar</h2>
-        <p>Please note that this is a sample calendar. For the most up-to-date information, please join our mailing list or follow our social media.</p>
-        
-        <table class="calendar">
-           <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                </tr>
-           </thead>
-           <tbody>
-               <tr>
-                   <td>Group Run</td>
-                   <td>Every Monday</td>
-                   <td>5:30 PM</td>
-                   <td>The Campanile</td>
-               </tr>
-               <tr>
-                   <td>Track Workout</td>
-                   <td>Every Tuesday</td>
-                   <td>6:30 AM</td>
-                   <td>SAC Fields</td>
-                </tr>
-                <tr>
-                   <td>Group Run</td>
-                   <td>Every Wednesday</td>
-                   <td>5:30 PM</td>
-                   <td>The Campanile</td>
-               </tr>
-                <tr>
-                   <td>Track Workout</td>
-                   <td>Every Thursday</td>
-                   <td>6:30 AM</td>
-                   <td>SAC Fields</td>
-                </tr>
-                <tr>
-                   <td>Group Run</td>
-                   <td>Every Friday</td>
-                   <td>5:30 PM</td>
-                   <td>The Campanile</td>
-               </tr>
-               <tr>
-                   <td>NIRCA Cross Country Regional</td>
-                   <td>TBA</td>
-                   <td>TBA</td>
-                   <td>TBA</td>
-               </tr>
-           </tbody>
-        </table>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div id="branding" class="branding">
+        <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
+          <span class="brand-mark" aria-hidden="true">🏃‍♀️</span>
+          <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
+        </a>
+      </div>
 
-        <div class="practice-details">
-            <h3>Standard Weekly Practices</h3>
-            <ul>
-                <li><strong>Monday:</strong> Easy 3-5 miles. Meet at the Campanile at 5:30 PM.</li>
-                <li><strong>Tuesday:</strong> Track workout. Meet at the SAC Fields at 6:30 AM.</li>
-                <li><strong>Wednesday:</strong> Easy 3-5 miles. Meet at the Campanile at 5:30 PM.</li>
-                <li><strong>Thursday:</strong> Track workout. Meet at the SAC Fields at 6:30 AM.</li>
-                <li><strong>Friday:</strong> Easy 3-5 miles. Meet at the Campanile at 5:30 PM.</li>
-            </ul>
-        </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="current"><a aria-current="page" href="schedule.html">Schedule</a></li>
+          <li><a href="join.html">How to Join</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>Georgia Tech Running Club &copy; 2025</p>
-        <p><a href="https://www.gatech.edu" target="_blank">Georgia Tech</a></p>
-    </footer>
+  <section class="hero hero--thin">
+    <div class="container">
+      <h1 class="page-title">Practice &amp; Events</h1>
+      <p class="page-tagline">Consistent weekly runs + special events throughout the semester.</p>
+    </div>
+  </section>
+
+  <main id="main" class="container content" role="main">
+    <!-- Weekly practices card -->
+    <section class="card card--pad-lg" aria-labelledby="weekly-title">
+      <h2 id="weekly-title">Standard Weekly Practices</h2>
+      <ul class="list-unstyled">
+        <li><strong>Monday</strong> — Easy 3–5 miles • <em>5:30 PM</em> • Meet at the Campanile</li>
+        <li><strong>Tuesday</strong> — Track workout • <em>6:30 AM</em> • SAC Fields</li>
+        <li><strong>Wednesday</strong> — Easy 3–5 miles • <em>5:30 PM</em> • Campanile</li>
+        <li><strong>Thursday</strong> — Track workout • <em>6:30 AM</em> • SAC Fields</li>
+        <li><strong>Friday</strong> — Easy 3–5 miles • <em>5:30 PM</em> • Campanile</li>
+      </ul>
+      <p class="muted" style="margin-top:.5rem">Times may shift for holidays, weather, or races — check announcements.</p>
+    </section>
+
+    <!-- Calendar table -->
+    <section aria-labelledby="calendar-title" style="margin-top: var(--space-6);">
+      <div class="section-head">
+        <h2 id="calendar-title">Practice &amp; Event Calendar</h2>
+        <p class="muted">A sample semester view. Swap in your live sheet or calendar embed when ready.</p>
+      </div>
+
+      <div class="card card--pad-lg">
+        <div class="table-wrap">
+          <table class="calendar">
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Group Run</td>
+                <td>Every Monday</td>
+                <td>5:30 PM</td>
+                <td>Campanile</td>
+              </tr>
+              <tr>
+                <td>Track Workout</td>
+                <td>Every Tuesday</td>
+                <td>6:30 AM</td>
+                <td>SAC Fields</td>
+              </tr>
+              <tr>
+                <td>Group Run</td>
+                <td>Every Wednesday</td>
+                <td>5:30 PM</td>
+                <td>Campanile</td>
+              </tr>
+              <tr>
+                <td>Track Workout</td>
+                <td>Every Thursday</td>
+                <td>6:30 AM</td>
+                <td>SAC Fields</td>
+              </tr>
+              <tr>
+                <td>Group Run</td>
+                <td>Every Friday</td>
+                <td>5:30 PM</td>
+                <td>Campanile</td>
+              </tr>
+              <tr>
+                <td>NIRCA Cross Country Regional</td>
+                <td>TBA</td>
+                <td>TBA</td>
+                <td>TBA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: var(--space-4); display:flex; gap: var(--space-3); flex-wrap:wrap;">
+          <a class="button" href="#" aria-disabled="true">Subscribe (ICS)</a>
+          <a class="button" href="#" aria-disabled="true">Add to Google Calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card card--pad-lg" aria-labelledby="notes-title" style="margin-top: var(--space-6);">
+      <h2 id="notes-title">Notes &amp; Weather</h2>
+      <p>We run rain or shine, with adjustments for lightning or extreme heat. Last-minute changes are posted on our social channels and group chat.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Georgia Tech Running Club &copy; 2025</p>
+      <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle with a11y
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
