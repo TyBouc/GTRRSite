@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Georgia Tech Run Club</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgia Tech Running Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-    <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Runnin' Wreck</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="join.html">How to Join</a></li>
+                    <li><a href="results.html">Results & Records</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <h1>Georgia Tech Run Club</h1>
-    <p class="ask-ethan">If you have questions just ask Ethan Maraldo.</p>
-    <div class="GroupPhoto">
-    <img src="GTRRGroupPhoto.png" alt="Georgia Tech Logo">
-    <div class="insta-link">
-        <a href="https://www.instagram.com/gtrunninwreck/" target="_blank">
-            <img src="Instagram_logo_2016.png" alt="Instagram Logo">
-        </a>
-        <a href="https://www.instagram.com/gtrunninwreck/" target="_blank">
-            Check out our Instagram!
-        </a>
-    </div>
+    <section id="showcase">
+        <div class="container">
+            <h1>Georgia Tech Running Club: Find Your Stride with Us.</h1>
+            <p>
+                <a href="schedule.html" class="button">View Practice Schedule</a>
+                <a href="join.html" class="button">Learn How to Join</a>
+            </p>
+        </div>
+    </section>
 
+    <section id="welcome">
+        <div class="container">
+            <h2>Welcome to Runnin' Wreck!</h2>
+            <p>We are a community of runners at Georgia Tech, welcoming all speeds and experience levels. Whether you're looking to stay fit, meet new people, or compete at a national level, we have a place for you.</p>
+        </div>
+    </section>
+
+    <section id="quick-links">
+        <div class="container">
+            <div class="box">
+                <img src="https://via.placeholder.com/90.png?text=Schedule" alt="Schedule Icon">
+                <h3><a href="schedule.html">Practice Schedule</a></h3>
+            </div>
+            <div class="box">
+                <img src="https://via.placeholder.com/90.png?text=Results" alt="Results Icon">
+                <h3><a href="results.html">Race Results</a></h3>
+            </div>
+            <div class="box">
+                <img src="https://via.placeholder.com/90.png?text=Gallery" alt="Gallery Icon">
+                <h3><a href="gallery.html">Photo Gallery</a></h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram-feed">
+        <div class="container">
+            <h2>Live Instagram Feed</h2>
+            <p>Placeholder for the live Instagram feed. Follow us <a href="https://www.instagram.com/gtrunninwreck/" target="_blank">@gtrunninwreck</a>!</p>
+            <!-- A real implementation would use an Instagram embedding tool -->
+        </div>
+    </section>
+
+    <footer>
+        <p>Georgia Tech Running Club &copy; 2025</p>
+        <p><a href="https://www.gatech.edu" target="_blank">Georgia Tech</a></p>
+    </footer>
 </body>
 </html>
