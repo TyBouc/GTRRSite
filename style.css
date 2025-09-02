@@ -1,4 +1,42 @@
-/* Race calendar meet links styling */
+/* Instagram icon and text in footer */
+.footer-instagram-link {
+  text-decoration: none;
+}
+.footer-instagram-text {
+  color: var(--gt-gold);
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+}
+.footer-instagram-link:hover .footer-instagram-text,
+.footer-instagram-link:focus .footer-instagram-text {
+  color: var(--gt-blue);
+}
+/* Instagram icon in footer */
+.footer-instagram-link img {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  transition: transform 0.15s;
+}
+.footer-instagram-link:hover img,
+.footer-instagram-link:focus img {
+  transform: scale(1.12) rotate(-8deg);
+}
+/* GroupMe link gold hover */
+.groupme-link {
+  color: var(--gt-blue);
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+.groupme-link:hover, .groupme-link:focus {
+  color: var(--gt-gold);
+}
+/* Centered GT gold heading for main title */
+.gt-gold-center {
+  color: var(--gt-gold);
+  text-align: center;
+}
+/* Race calendar meet links styling */ 
 .calendar .race-link {
   color: var(--gt-gold) !important;
   font-weight: bold;
