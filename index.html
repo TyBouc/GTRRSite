@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    #particle-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .page-title, h1, h2, h3 {
+      transition: transform 0.7s cubic-bezier(.23,1.01,.32,1);
+    }
+    .flashy-animate {
+      transform: scale(1.12) rotate(-2deg);
+      text-shadow: 0 4px 24px var(--gt-gold, #B3A369), 0 1px 0 #fff;
+    }
+    a, button {
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    a:hover, a:focus, button:hover, button:focus {
+      box-shadow: 0 2px 12px var(--gt-blue, #00305733);
+      transform: translateY(-2px) scale(1.04);
+    }
+  </style>
   <link rel="icon" href="Images/GTRRLogo.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home | Georgia Tech Running Club</title>
+  <title>Home | Georgia Tech Run Club</title>
   <meta name="description" content="Runnin’ Wreck — Georgia Tech's running club. All paces welcome. Practice schedule, how to join, results, and photos." />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="particle-bg"></canvas>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" role="banner">
@@ -43,7 +66,7 @@
 
   <section class="hero">
     <div class="container">
-  <h1 class="page-title gt-gold-center">Georgia Tech Running Club</h1>
+  <h1 class="page-title gt-gold-center">Georgia Tech Run Club</h1>
       <p style="margin-top:1rem">
       </p>
     </div>
@@ -73,12 +96,12 @@
         </article>
 
 
-        <article class="officer-card" role="link" tabindex="0" onclick="location.href='gallery.html'">
+        <!--<article class="officer-card" role="link" tabindex="0" onclick="location.href='gallery.html'">
           <img src="Images/CarolinaClasic24Group.jpg" alt="" aria-hidden="true" />
           <h3 class="officer-name">Photo Gallery</h3>
           <p class="officer-bio">Practice highlights and race day vibes.</p>
           <p><a class="officer-email" href="gallery.html">Browse photos</a></p>
-        </article>
+        </article>-->
       </div>
     </section>
 
@@ -110,6 +133,52 @@
   </footer>
 
   <script>
+    // Flashy animated background particles
+    (function particleBG() {
+      const canvas = document.getElementById('particle-bg');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = window.innerWidth, h = window.innerHeight;
+      canvas.width = w; canvas.height = h;
+      window.addEventListener('resize', () => {
+        w = window.innerWidth; h = window.innerHeight;
+        canvas.width = w; canvas.height = h;
+      });
+      const colors = ['#B3A369', '#003057'];
+      const particles = Array.from({length: 48}, () => ({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: 2 + Math.random()*3,
+        dx: -0.5 + Math.random(),
+        dy: -0.5 + Math.random(),
+        color: colors[Math.floor(Math.random()*colors.length)]
+      }));
+      function draw() {
+        ctx.clearRect(0,0,w,h);
+        for (const p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, 2*Math.PI);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = 0.7;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          p.x += p.dx; p.y += p.dy;
+          if (p.x < 0 || p.x > w) p.dx *= -1;
+          if (p.y < 0 || p.y > h) p.dy *= -1;
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // Animate main title on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const title = document.querySelector('.page-title');
+      if (title) {
+        title.classList.add('flashy-animate');
+        setTimeout(() => title.classList.remove('flashy-animate'), 1200);
+      }
+    });
     // Mobile nav toggle with a11y
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.getElementById('primary-nav');

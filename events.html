@@ -1,1 +1,70 @@
+	<style>
+		#particle-bg {
+			position: fixed;
+			top: 0; left: 0; width: 100vw; height: 100vh;
+			z-index: 0;
+			pointer-events: none;
+		}
+		.page-title, h1, h2, h3 {
+			transition: transform 0.7s cubic-bezier(.23,1.01,.32,1);
+		}
+		.flashy-animate {
+			transform: scale(1.12) rotate(-2deg);
+			text-shadow: 0 4px 24px var(--gt-gold, #B3A369), 0 1px 0 #fff;
+		}
+		a, button {
+			transition: box-shadow 0.2s, transform 0.2s;
+		}
+		a:hover, a:focus, button:hover, button:focus {
+			box-shadow: 0 2px 12px var(--gt-blue, #00305733);
+			transform: translateY(-2px) scale(1.04);
+		}
+	</style>
+	<canvas id="particle-bg"></canvas>
+		// Flashy animated background particles
+		(function particleBG() {
+			const canvas = document.getElementById('particle-bg');
+			if (!canvas) return;
+			const ctx = canvas.getContext('2d');
+			let w = window.innerWidth, h = window.innerHeight;
+			canvas.width = w; canvas.height = h;
+			window.addEventListener('resize', () => {
+				w = window.innerWidth; h = window.innerHeight;
+				canvas.width = w; canvas.height = h;
+			});
+			const colors = ['#B3A369', '#003057'];
+			const particles = Array.from({length: 48}, () => ({
+				x: Math.random()*w,
+				y: Math.random()*h,
+				r: 2 + Math.random()*3,
+				dx: -0.5 + Math.random(),
+				dy: -0.5 + Math.random(),
+				color: colors[Math.floor(Math.random()*colors.length)]
+			}));
+			function draw() {
+				ctx.clearRect(0,0,w,h);
+				for (const p of particles) {
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, p.r, 0, 2*Math.PI);
+					ctx.fillStyle = p.color;
+					ctx.globalAlpha = 0.7;
+					ctx.fill();
+					ctx.globalAlpha = 1;
+					p.x += p.dx; p.y += p.dy;
+					if (p.x < 0 || p.x > w) p.dx *= -1;
+					if (p.y < 0 || p.y > h) p.dy *= -1;
+				}
+				requestAnimationFrame(draw);
+			}
+			draw();
+		})();
+
+		// Animate main title on load
+		window.addEventListener('DOMContentLoaded', () => {
+			const title = document.querySelector('.page-title');
+			if (title) {
+				title.classList.add('flashy-animate');
+				setTimeout(() => title.classList.remove('flashy-animate'), 1200);
+			}
+		});
 	<link rel="icon" href="Images/GTRRLogo.png" type="image/png">
