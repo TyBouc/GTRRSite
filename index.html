@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training & Gallery Tester</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 16px 0;
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    nav button {
+      margin: 0 8px;
+      padding: 10px 20px;
+      border: none;
+      background: #e0e0e0;
+      color: #333;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.2s ease;
+    }
+
+    nav button:hover {
+      background: #d0d0d0;
+    }
+
+    nav button.active {
+      background: #007bff;
+      color: white;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    footer {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>🧩 Utility Tester</header>
+
+  <nav>
+    <button id="apiBtn" class="active" onclick="switchTool('api')">Training Plan API</button>
+    <button id="galleryBtn" onclick="switchTool('gallery')">Photo Gallery</button>
+  </nav>
+
+  <iframe id="toolFrame" src="api.html" title="Utility Tool"></iframe>
+
+  <footer>
+    <p>Switch between Training Plan API Tester and Gallery Tester.</p>
+  </footer>
+
+  <script>
+    const frame = document.getElementById("toolFrame");
+    const apiBtn = document.getElementById("apiBtn");
+    const galleryBtn = document.getElementById("galleryBtn");
+
+    function switchTool(tool) {
+      if (tool === "api") {
+        frame.src = "api.html";
+        apiBtn.classList.add("active");
+        galleryBtn.classList.remove("active");
+      } else {
+        frame.src = "gallery.html";
+        galleryBtn.classList.add("active");
+        apiBtn.classList.remove("active");
+      }
+    }
+  </script>
+</body>
+</html>

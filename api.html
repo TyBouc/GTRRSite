@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Plan API Tester</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      max-width: 600px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #training-plan {
+      margin-top: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    #log {
+      background: #111;
+      color: #0f0;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      margin-top: 20px;
+      overflow-x: auto;
+    }
+
+    .loading {
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏃‍♂️ Training Plan API Tester</h1>
+
+  <div class="input-container">
+    <input type="text" id="api-url" placeholder="Paste your Web App URL here" />
+    <button onclick="loadTrainingPlan()">Load Plan</button>
+  </div>
+
+  <div id="status" class="loading"></div>
+
+  <div id="training-plan"></div>
+
+  <pre id="log"></pre>
+
+  <script>
+    async function loadTrainingPlan() {
+      const url = document.getElementById("api-url").value.trim();
+      const log = document.getElementById("log");
+      const container = document.getElementById("training-plan");
+      const status = document.getElementById("status");
+
+      container.innerHTML = "";
+      log.textContent = "";
+      status.textContent = "Fetching data...";
+
+      if (!url) {
+        status.textContent = "⚠️ Please enter a valid API URL.";
+        return;
+      }
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status} (${res.statusText})`);
+        
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          throw new Error("Response is not valid JSON:\n\n" + text.slice(0, 500));
+        }
+
+        status.textContent = "✅ Successfully fetched data.";
+
+        // Render table
+        if (Array.isArray(data) && data.length > 0) {
+          const headers = Object.keys(data[0]);
+          const tableHTML = `
+            <table>
+              <thead>
+                <tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr>
+              </thead>
+              <tbody>
+                ${data.map(row =>
+                  `<tr>${headers.map(h => `<td>${row[h] ?? ""}</td>`).join("")}</tr>`
+                ).join("")}
+              </tbody>
+            </table>
+          `;
+          container.innerHTML = tableHTML;
+        } else {
+          container.innerHTML = "<p>No data found in response.</p>";
+        }
+
+        log.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        status.textContent = "❌ Error fetching data.";
+        log.textContent = err.message;
+      }
+    }
+  </script>
+</body>
+</html>
