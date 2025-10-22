@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="Images/GTRRLogo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week of Training | Georgia Tech Running Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div id="branding" class="branding">
+        <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
+          <img src="Images/GTRRLogo.png" alt="GTRR Logo" style="height:2.2em;vertical-align:middle;">
+          <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li class="current"><a aria-current="page" href="weekOfTraining.html">Week of Training</a></li>
+          <li><a href="join.html">How to Join</a></li>
+          <li><a href="https://gtvault-my.sharepoint.com/:w:/g/personal/tboucino3_gatech_edu/EYoHQx2gJ0ZNiV92icKnjhABl0Ng4OHK6NYGoXoewUHABw?e=5N7mCp" target="_blank" rel="noopener">Team Hub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container content" role="main">
+    <!-- Add week-of-training content here -->
+    <section class="card card--pad-lg">
+      <h1>Week of Training</h1>
+      <p>Placeholder — add the weekly training plan, notes, and links here.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Georgia Tech Running Club &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
