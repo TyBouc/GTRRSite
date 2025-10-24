@@ -7,6 +7,51 @@
   <title>Week of Training | Georgia Tech Running Club</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Add-on styles just for the training table */
+    .training-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+    }
+
+    .training-table th {
+      background-color: #f7f7f7;
+      font-weight: 700;
+      text-align: left;
+      padding: 0.75em 1em;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .training-table td {
+      padding: 0.6em 1em;
+      border-bottom: 1px solid #eee;
+    }
+
+    .training-table tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    
+
+    .training-table caption {
+      caption-side: top;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 0.5em;
+      color: #333;
+    }
+
+    @media (max-width: 700px) {
+      .training-table th, .training-table td {
+        font-size: 0.9rem;
+        padding: 0.5em;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,29 +86,100 @@
   </header>
 
   <main id="main" class="container content" role="main">
-    <!-- Add week-of-training content here -->
     <section class="card card--pad-lg">
-      <h1>Week of Training</h1>
-      <p>Placeholder — add the weekly training plan, notes, and links here.</p>
+      <h1>Training</h1>
+      <div id="training-data"></div>
+      <p id="loading-msg" style="margin-left:1.5rem;">Data may take a second to load.</p>
     </section>
   </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>Georgia Tech Running Club &copy; 2025</p>
-    </div>
-  </footer>
-
   <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
+  const apiURL =
+    "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhQWeVbU3SAC2Te8dAyHcfAy3XKhYxSWM4p0IJFQCqDE-VDuFTU3NGwCZ70kCSg_x7VuVZm3-sm1tMdEE-jt5RKjdOsk8xNCMYzv62vS9VTKpdpOdYOdW50vJahJT97dN2yr1BfeOWYyVK0pbOnQI_SjxUORwv96CqRMXsKfhm3k27DFJYPAsVHFquEvGxbECwhQGGszbCyQtrkUpvibPOvcDRmEHyQl_d2nWo0zLhJVWSYDrYdu9E_g4_NFJLDuxX-11XI9ssG0QMtd7qChDXOYazy_4Zkil6vg3UT&lib=MFIn001NRq5VrBW4hotLJniJkt3D8Y0Py";
+
+  async function loadTrainingData() {
+    const loadingMsg = document.getElementById("loading-msg");
+    const container = document.getElementById("training-data");
+
+    // Show loading message
+    if (loadingMsg) {
+      loadingMsg.style.display = "block";
+      loadingMsg.textContent = "Loading training data...";
     }
-  </script>
-</body>
+
+    try {
+      const res = await fetch(apiURL);
+      if (!res.ok) throw new Error("Network error");
+      const data = await res.json();
+      renderTrainingTable(data);
+
+      // Hide loading message after successful load
+      if (loadingMsg) loadingMsg.style.display = "none";
+    } catch (err) {
+      console.error("Failed to load training data:", err);
+      if (container)
+        container.innerHTML = "<p style='color:red;'>Error loading data.</p>";
+      if (loadingMsg) {
+        loadingMsg.textContent = "Failed to load training data.";
+        loadingMsg.style.color = "red";
+      }
+    }
+  }
+
+  function renderTrainingTable(data) {
+    const container = document.getElementById("training-data");
+    if (!Array.isArray(data)) {
+      container.innerHTML = "<p>Invalid data format.</p>";
+      return;
+    }
+
+    let html = `
+      <table class="training-table">
+        <caption>Week of ${
+          data[0]
+            ? Object.keys(data[0])[0].split(" ")[1] +
+              " " +
+              Object.keys(data[0])[0].split(" ")[2] +
+              ", " +
+              Object.keys(data[0])[0].split(" ")[3]
+            : ""
+        }</caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Mileage</th>
+            <th>Workout</th>
+            <th>Safety Officer 1</th>
+            <th>Safety Officer 2</th>
+            <th>Route</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    for (const entry of data) {
+      const day = Object.values(entry)[0] || "";
+      html += `
+        <tr>
+          <td>${day}</td>
+          <td>${entry.Mileage || ""}</td>
+          <td>${entry.Workout || ""}</td>
+          <td>${entry.SO1 || ""}</td>
+          <td>${entry.SO2 || ""}</td>
+          <td>${entry.Route || ""}</td>
+        </tr>
+      `;
+    }
+
+    html += `
+        </tbody>
+      </table>
+    `;
+
+    container.innerHTML = html;
+  }
+
+  document.addEventListener("DOMContentLoaded", loadTrainingData);
+</script>
+
+  </body>
 </html>
