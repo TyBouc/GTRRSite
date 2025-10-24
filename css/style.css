@@ -31,11 +31,7 @@
 .groupme-link:hover, .groupme-link:focus {
   color: var(--gt-gold);
 }
-/* Centered GT gold heading for main title */
-.gt-gold-center {
-  color: var(--gt-gold);
-  text-align: center;
-}
+
 /* Race calendar meet links styling */ 
 .calendar .race-link {
   color: var(--gt-gold) !important;
@@ -55,8 +51,12 @@
 /* --- Tokens --- */
 :root{
   --gt-gold:#B3A369;
+  --gt-light-gold:#FFDB58;
   --gt-blue:#003057;
+  --gt-bright-blue:#66B2FF;
+
   --white:#ffffff;
+  --off-white:#F2F2F2;
   --black:#000000;
 
   --bg:#f6f7fb;
@@ -173,24 +173,16 @@ body{
 }
 
 /* --- Hero --- */
-.hero{
+.hero {
+  width: 100vw; /* Ensure hero spans full width */
+  margin-left: calc(-50vw + 50%); /* Center the hero section */
   background:
     radial-gradient(1200px 300px at 10% -50%, rgba(179,163,105,.25), transparent 60%),
     linear-gradient(180deg, rgba(0,48,87,.12), transparent 40%),
     var(--bg);
-  border-bottom:1px solid rgba(0,0,0,.04);
+  border-bottom: 1px solid rgba(0,0,0,.04);
 }
-.hero--thin{padding:clamp(1.25rem, 3vw, 2rem) 0}
-.page-title{
-  margin:0 0 .25rem 0;
-  font-size:clamp(1.75rem, 3.6vw, 2.4rem);
-  letter-spacing:.2px;
-}
-.page-tagline{
-  margin:0;
-  color:var(--muted);
-  font-size:clamp(1rem, 2.2vw, 1.1rem);
-}
+.hero--thin{padding:clamp(1.25rem, 3vw, 2rem)}
 
 /* --- Content framing --- */
 .content{padding-block:clamp(var(--space-6), 5vw, var(--space-7))}

@@ -1,0 +1,45 @@
+/* Centered GT gold heading for main title */
+.gt-gold-center {
+  color: var(--gt-gold);
+  text-align: center;
+}
+/* ADD this block to your CSS file, perhaps in index.css */
+.hero-background-wrapper {
+    position: relative;
+    background-image: url('../Images/reginoalsGroup25.JPG'); /* change to your image path */
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* height constraint */
+    min-height: 400px; /* minimum height for smaller screens */
+    /* Re-apply the full-width styles */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    display: flex; /* to center content vertically/horizontally */
+    align-items: center;
+    justify-content: center;
+    
+
+    padding-top: 10vh;
+}
+
+.hero-background-wrapper .container {
+    /* Ensure the container inside the wrapper is just for content grouping */
+    width: 100%; 
+    /* Or you might not need the container here at all if the text is short */
+}
+
+.page-title {
+    /* Keep only the necessary text styles */
+    color: var(--gt-gold);
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em; /* Adjust font size as needed */
+    position: relative; /* If you need z-index or a simple overlay */
+    z-index: 2; /* Ensure it's above any potential overlay */
+}
+
+.page-tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+}

@@ -1,0 +1,157 @@
+/* --- Training Page Hero --- */
+.training-hero {
+  position: relative;
+  background-image: url('../Images/CJRothwellTrainingCover.JPG');/* change to your image path */
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* dark overlay for contrast */
+.training-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* text container */
+.training-hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.training-hero-text h2 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+.training-hero-text h1 {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 900;
+  margin: 0;
+}
+
+.training-hero-bar {
+  background-color: var(--gt-light-gold);
+  height: 60px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .training-hero {
+    height: 55vh;
+  }
+  .training-hero-text h1 {
+    font-size: 2.4rem;
+  }
+  .primary-nav {
+                display: none; /*mobile fix*/
+            }
+  
+}
+/*Full Section*/
+.training-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+}
+/*Sidebar: fixed-width scrollable column*/
+.plan-select {
+    width:260px;
+    max-height: calc(100vh - 100px); /* adjust to leave space for header/hero */
+    position: sticky;
+    overflow-y: auto;
+    padding: 0.25rem;                /* smaller padding so dividers sit flush */
+    background:  var(--gt-blue);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+
+    
+    overflow: hidden; /* <-- important: prevents individual button radii from showing */
+}
+
+/*Buttons for selectable plans*/
+.plan-select .plan-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    background: transparent;       /* let container paint the bg so dividers are continuous */
+    border: none;
+    padding: 0.9rem 1rem;
+    margin: 0;                      /* remove margins so dividers are flush */
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0;               /* remove individual rounding */
+    color: var(--gt-light-gold);
+    font-weight: 700;
+    
+    transition: background 0.2s, color 0.2s;
+}
+
+/* thin divider between buttons */
+.plan-select .plan-btn + .plan-btn {
+  border-top: 3px solid rgba(255,255,255,0.08); /*subtle divider */
+}
+
+/* hover/focus/active states for clarity and accessibility */
+.plan-select .plan-btn:hover,
+        .plan-select .plan-btn:focus {
+            background: var(--gt-gold);
+            color: var(--gt-blue);    
+            outline: none;
+        }
+
+.plan-select .plan-btn.active {
+  background: var(--white);
+  color: var(--white);
+  font-weight: 900;
+}
+.plan-info {
+            flex-grow: 1;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 0px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+@media (max-width: 900px) {
+    .training-section {
+        flex-direction: column;
+        gap: 1.5rm
+    }
+    .plan-select {
+                width: 100%;
+                max-height: none;
+                position: static;
+                top: auto;
+                overflow-y: visible;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                border-radius: 8px; /*ugh i hate this but its better for mobile probs*/
+            }
+    .plan-select .plan-btn {
+                border-top: none !important;
+                border-right: 3px solid rgba(255,255,255,0.08);
+            }
+            /* Remove last right border in grid */
+            .plan-select .plan-btn:nth-child(2n) { 
+                /* a more robust grid solution is better */
+                /* border-right: none; */ 
+            }
+            .plan-select .plan-btn + .plan-btn {
+                border-top: none;
+            }
+}
