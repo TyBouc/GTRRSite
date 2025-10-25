@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week of Training | Georgia Tech Running Club</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -51,17 +50,30 @@
 <div class="training-hero-bar"></div>
 <section class="training-section">
   <aside class="plan-select">
-    <button class="plan-btn" data-plan="short">Short‑Mileage Group</button>
-    <button class="plan-btn" data-plan="medium">Medium‑Mileage Group</button>
-    <button class="plan-btn" data-plan="long">Long‑Mileage Group</button>
-    <button class="plan-btn" data-plan="sprint">Sprint Group</button>
-    <button class="plan-btn" data-plan="lists">Lifts & Drills</button>
+    <button class="plan-btn" id = 'short' data-plan="short">Short‑Mileage Group</button>
+    <button class="plan-btn" id = 'medium' data-plan="medium">Medium‑Mileage Group</button>
+    <button class="plan-btn" id = 'long' data-plan="long">Long‑Mileage Group</button>
+    <button class="plan-btn" id = 'sprint' data-plan="sprint">Sprint Group</button>
+    <button class="plan-btn" id = 'lift' data-plan="lifts">Lifts & Drills</button>
   </aside>
   <div class="plan-info">
-    <p>Select a plan from the left to view details.</p>
-  </div>
+    <p>Select a plan from the left to view details.</p>
+</div>
+
 </section>
-  </body>
+<footer class="site-footer" role="contentinfo">
+    <div class="container" style="position:relative;">
+      <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener" class="footer-instagram-link" aria-label="Instagram" style="position:absolute;left:0;bottom:0;display:flex;align-items:center;padding:0.5rem 0.75rem;">
+  <img src="../Images/Instagram_Icon.PNG" alt="Instagram Icon" style="height:2em;width:2em;display:block;margin-right:0.5em;" />
+  <span class="footer-instagram-text">Instagram</span>
+      </a>
+      <p style="margin-left:2.5em;">Georgia Tech Running Club &copy; 2025</p>
+      <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
+    </div>
+  </footer>
+
+<script src="../js/training.js" defer></script> </body>
+
 </html>
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/training.css">

@@ -1,7 +1,7 @@
 /* --- Training Page Hero --- */
 .training-hero {
   position: relative;
-  background-image: url('../Images/CJRothwellTrainingCover.JPG');/* change to your image path */
+  background-image: url('../Images/CJRothwellTrainingCover.JPG');
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--white);
+  color: var(--gt-light-gold);
   overflow: hidden;
 }
 
@@ -57,101 +57,144 @@
     font-size: 2.4rem;
   }
   .primary-nav {
-                display: none; /*mobile fix*/
-            }
-  
+    display: none; /*mobile fix*/
+  }
 }
-/*Full Section*/
-.training-section {
-    display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-    padding: 3rem 1rem;
-    margin: 0 auto;
-}
-/*Sidebar: fixed-width scrollable column*/
+
+/* --- Sidebar for Plan Selection --- */
 .plan-select {
-    width:260px;
-    max-height: calc(100vh - 100px); /* adjust to leave space for header/hero */
-    position: sticky;
-    overflow-y: auto;
-    padding: 0.25rem;                /* smaller padding so dividers sit flush */
-    background:  var(--gt-blue);
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
-
-    
-    overflow: hidden; /* <-- important: prevents individual button radii from showing */
+  width: 260px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding: 0.25rem;
+  background: var(--gt-blue);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 0;
 }
 
-/*Buttons for selectable plans*/
+/* Plan selection buttons */
 .plan-select .plan-btn {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    text-align: left;
-    background: transparent;       /* let container paint the bg so dividers are continuous */
-    border: none;
-    padding: 0.9rem 1rem;
-    margin: 0;                      /* remove margins so dividers are flush */
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 0;               /* remove individual rounding */
-    color: var(--gt-light-gold);
-    font-weight: 700;
-    
-    transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.9rem 1rem;
+  margin: 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 0;
+  color: var(--gt-light-gold);
+  font-weight: 700;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* thin divider between buttons */
+/* Divider between buttons */
 .plan-select .plan-btn + .plan-btn {
-  border-top: 3px solid rgba(255,255,255,0.08); /*subtle divider */
+  border-top: 3px solid rgba(255, 255, 255, 0.08);
 }
 
-/* hover/focus/active states for clarity and accessibility */
+/* Hover/focus styles */
 .plan-select .plan-btn:hover,
-        .plan-select .plan-btn:focus {
-            background: var(--gt-gold);
-            color: var(--gt-blue);    
-            outline: none;
-        }
+.plan-select .plan-btn:focus {
+  background: var(--gt-light-gold);
+  color: var(--gt-blue);
+  outline: none;
+}
 
+/* Active state */
 .plan-select .plan-btn.active {
-  background: var(--white);
-  color: var(--white);
+  background: var(--gt-light-gold);
+  color: var(--gt-blue);
   font-weight: 900;
 }
+
+/* Right content area */
 .plan-info {
-            flex-grow: 1;
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 0px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-@media (max-width: 900px) {
-    .training-section {
-        flex-direction: column;
-        gap: 1.5rm
-    }
-    .plan-select {
-                width: 100%;
-                max-height: none;
-                position: static;
-                top: auto;
-                overflow-y: visible;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                border-radius: 8px; /*ugh i hate this but its better for mobile probs*/
-            }
-    .plan-select .plan-btn {
-                border-top: none !important;
-                border-right: 3px solid rgba(255,255,255,0.08);
-            }
-            /* Remove last right border in grid */
-            .plan-select .plan-btn:nth-child(2n) { 
-                /* a more robust grid solution is better */
-                /* border-right: none; */ 
-            }
-            .plan-select .plan-btn + .plan-btn {
-                border-top: none;
-            }
+  flex-grow: 1;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
+/* Add this to training.css, ideally near the top of the Training section styles */
+.training-section {
+  display: flex; /* Enables Flexbox layout */
+  gap: 20px; /* Adds space between the sidebar and the main content */
+  max-width: 1400px; /* Optional: Sets a max width for the content area */
+  margin: 0 auto 30px; /* Optional: Centers the section on the page */
+  padding: 1.5rem; /* Ensures content isn't flush with screen edges */
+  align-items: flex-start; /* Aligns items to the top */
+}
+
+/* Ensure the media query overrides this for mobile */
+@media (max-width: 900px) {
+  .training-section {
+    flex-direction: column; /* This correctly forces vertical stacking on mobile */
+    gap: 1.5rem;
+    padding: 0; /* Adjust padding for mobile view */
+  }
+  .plan-select {
+    width: 100%;
+    max-height: none;
+    position: static;
+    overflow-y: visible;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    border-radius: 8px;
+  }
+  .plan-select .plan-btn {
+    border-top: none !important; /* Good: Removes horizontal lines */
+    border-right: 3px solid rgba(255, 255, 255, 0.08); /* Problem: Adds a vertical line to EVERY button */
+  }
+  .plan-select .plan-btn + .plan-btn {
+    border-top: none; /* Good: Redundant, but harmless */
+  }
+}
+
+/* --- Training Table --- */
+.training-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+}
+
+/* Header */
+.training-table thead {
+  background-color: var(--gt-blue);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.95rem;
+}
+
+.training-table th,
+.training-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Row alternation */
+.training-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Hover highlight */
+.training-table tbody tr:hover {
+  background-color: #fff7e1;
+  transition: background-color 0.25s ease;
+}
+
+/* Day cells */
+.day-cell {
+  font-weight: 700;
+  color: var(--gt-blue, #003057);
+  text-transform: uppercase;
+}
+

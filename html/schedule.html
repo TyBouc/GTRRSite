@@ -152,17 +152,6 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle with a11y
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    }
-  </script>
+  <script src="../js/schedule.js" defer></script>
 </body>
 </html>

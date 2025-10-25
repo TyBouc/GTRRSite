@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Centered GT gold heading for main title */
 .gt-gold-center {
   color: var(--gt-gold);
@@ -6,34 +11,29 @@
 /* ADD this block to your CSS file, perhaps in index.css */
 .hero-background-wrapper {
     position: relative;
-    background-image: url('../Images/reginoalsGroup25.JPG'); /* change to your image path */
+    background-image: url('../Images/reginoalsGroup25.JPG');
     background-size: cover;
     background-position: center;
-    height: 70vh; /* height constraint */
-    min-height: 400px; /* minimum height for smaller screens */
-    /* Re-apply the full-width styles */
+    height: 70vh;
+    min-height: 400px;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    display: flex; /* to center content vertically/horizontally */
-    align-items: center;
-    justify-content: center;
-    
-
-    padding-top: 10vh;
+    display: flex;
+    align-items: flex-start; 
+    padding-top: 17vh;
 }
 
 .hero-background-wrapper .container {
-    /* Ensure the container inside the wrapper is just for content grouping */
     width: 100%; 
-    /* Or you might not need the container here at all if the text is short */
+    margin-top: -10vh;
 }
 
 .page-title {
     /* Keep only the necessary text styles */
-    color: var(--gt-gold);
+    color: var(--white);
     text-align: center;
     margin: 0;
-    font-size: 2.5em; /* Adjust font size as needed */
+    font-size: 3rem; /* Adjust font size as needed */
     position: relative; /* If you need z-index or a simple overlay */
     z-index: 2; /* Ensure it's above any potential overlay */
 }
