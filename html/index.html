@@ -7,8 +7,10 @@
   <title>Home | Georgia Tech Running Club</title>
   <meta name="description" content="Runnin’ Wreck — Georgia Tech's running club. All paces welcome. Practice schedule, how to join, results, and photos." />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <script src="../js/index.js" defer></script>
+<html>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -16,7 +18,7 @@
     <div class="container nav-wrap">
       <div id="branding" class="branding">
         <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
-          <img src="Images/GTRRLogo.png" alt="GTRR Logo" style="height:2.2em;vertical-align:middle;">
+          <img src="../Images/GTRRLogo.png" alt="GTRR Logo" style="height:2.2em;vertical-align:middle;">
           <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
         </a>
       </div>
@@ -33,6 +35,7 @@
           <li class="current"><a aria-current="page" href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="weekOfTraining.html">Training</a></li>
           <li><a href="join.html">How to Join</a></li>
           <!--<li><a href="gallery.html">Gallery</a></li>-->
           <li><a href="https://gtvault-my.sharepoint.com/:w:/g/personal/tboucino3_gatech_edu/EYoHQx2gJ0ZNiV92icKnjhABl0Ng4OHK6NYGoXoewUHABw?e=5N7mCp" target="_blank" rel="noopener">Team Hub</a></li>
@@ -40,12 +43,13 @@
       </nav>
     </div>
   </header>
-
+  
   <section class="hero">
-    <div class="container">
-  <h1 class="page-title gt-gold-center">Georgia Tech Running Club</h1>
-      <p style="margin-top:1rem">
-      </p>
+    <div class="hero-background-wrapper">
+      <div class="container">
+        <h1 class="page-title">Georgia Tech Running Club</h1>
+        <p style="margin-top:1rem"></p>
+      </div>
     </div>
   </section>
 
@@ -53,8 +57,7 @@
     <!-- Welcome / Intro -->
     <section class="card card--pad-lg" aria-labelledby="welcome-title">
       <h2 id="welcome-title">Welcome to Runnin’ Wreck!</h2>
-      <p>Runnin' Wreck provides a friendly running community to runners of all ability levels, offering many different types of runs: group runs, speed workouts, long runs, and races at Nirca sponsored events.
-</p>
+      <p>Runnin' Wreck provides a friendly running community to runners of all ability levels, offering many different types of runs: group runs, speed workouts, long runs, and races at Nirca sponsored events.</p>
     </section>
 
     <!-- Quick links -->
@@ -64,19 +67,18 @@
       </div>
 
       <div class="officer-grid">
-        <!-- Reuse grid styles for simple cards -->
         <article class="officer-card" role="link" tabindex="0" onclick="location.href='schedule.html'">
-          <img src="Images/S24TTGroup.PNG" alt="" aria-hidden="true" />
+          <img src="../Images/S24TTGroup.PNG" alt="" aria-hidden="true" />
           <h3 class="officer-name">Practice Schedule</h3>
           <p class="officer-bio">When &amp; Where we meet each week.</p>
           <p><a class="officer-email" href="schedule.html">Open schedule</a></p>
         </article>
 
         <article class="officer-card" role="link" tabindex="0">
-          <img src="Images/CarolinaClasic24Group.jpg" alt="" aria-hidden="true" />
+          <img src="../Images/CarolinaClasic24Group.jpg" alt="" aria-hidden="true" />
           <h3 class="officer-name">Photo Gallery Coming Soon!</h3>
           <p class="officer-bio">Practice highlights and race day vibes.</p>
-            <p class="officer-email"><a href="photoalbum.html">Browse photos</a></p>
+          <p class="officer-email"><a href="photoalbum.html">Browse photos</a></p>
         </article>
       </div>
     </section>
@@ -84,8 +86,8 @@
     <!-- Instagram / Social -->
     <section class="card card--pad-lg" aria-labelledby="social-title" style="margin-top: var(--space-6)">
       <h2 id="social-title">Stay Connected & Support</h2>
-      <p>Follow us on Instagram <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener">@gtrunninwreck!</a></p>
-      <p>Want to support our trip to Nationals and goals for the future? Use our <a href="https://www.gofundme.com/f/donate-to-keep-runnin-wreck-racing" target="_blank" rel="noopener">GoFundMe </a>to help out!</p>
+      <p>Follow us on Instagram <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener">@gtrunninwreck</a>!</p>
+      <p>Want to support our trip to Nationals and goals for the future? Use our <a href="https://www.gofundme.com/f/donate-to-keep-runnin-wreck-racing" target="_blank" rel="noopener">GoFundMe</a> to help out!</p>
     </section>
 
     <!-- Contact / Officer Links -->
@@ -101,34 +103,10 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container" style="position:relative;">
       <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener" class="footer-instagram-link" aria-label="Instagram" style="position:absolute;left:0;bottom:0;display:flex;align-items:center;padding:0.5rem 0.75rem;">
-  <img src="Images/Instagram_Icon.PNG" alt="Instagram Icon" style="height:2em;width:2em;display:block;margin-right:0.5em;" />
-  <span class="footer-instagram-text">Instagram</span>
+        <img src="../Images/Instagram_Icon.PNG" alt="Instagram Icon" style="height:2em;width:2em;display:block;margin-right:0.5em;" />
+        <span class="footer-instagram-text">Instagram</span>
       </a>
       <p style="margin-left:2.5em;">Georgia Tech Running Club &copy; 2025</p>
       <p><a href="https://www.gatech.edu" target="_blank" rel="noopener">Georgia Tech</a></p>
     </div>
   </footer>
-
-  <script>
-    // Mobile nav toggle with a11y
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    }
-    // Make "quick link" cards keyboard-activatable
-    document.querySelectorAll('.officer-card[role="link"]').forEach(card => {
-      card.addEventListener('keydown', (e) => {
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
-  </script>
-</body>
-</html>

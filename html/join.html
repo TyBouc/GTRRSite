@@ -7,7 +7,7 @@
   <title>How to Join | Georgia Tech Running Club</title>
   <meta name="description" content="How to join Runnin’ Wreck at Georgia Tech — who can join, dues, first practice, and FAQs." />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,7 +16,7 @@
     <div class="container nav-wrap">
       <div id="branding" class="branding">
         <a class="brand-link" href="index.html" aria-label="Runnin' Wreck home">
-          <img src="Images/GTRRLogo.png" alt="GTRR Logo" style="height:2.2em;vertical-align:middle;">
+          <img src="../Images/GTRRLogo.png" alt="GTRR Logo" style="height:2.2em;vertical-align:middle;">
           <span class="brand-text"><span class="highlight">Runnin’ Wreck</span></span>
         </a>
       </div>
@@ -33,6 +33,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="weekOfTraining.html">Training</a></li>
           <li class="current"><a aria-current="page" href="join.html">How to Join</a></li>
           <!--<li><a href="gallery.html">Gallery</a></li>-->
           <li><a href="https://gtvault-my.sharepoint.com/:w:/g/personal/tboucino3_gatech_edu/EYoHQx2gJ0ZNiV92icKnjhABl0Ng4OHK6NYGoXoewUHABw?e=5N7mCp" target="_blank" rel="noopener">Team Hub</a></li>
@@ -104,7 +105,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container" style="position:relative;">
       <a href="https://www.instagram.com/gtrunninwreck/" target="_blank" rel="noopener" class="footer-instagram-link" aria-label="Instagram" style="position:absolute;left:0;bottom:0;display:flex;align-items:center;padding:0.5rem 0.75rem;">
-  <img src="Images/Instagram_Icon.PNG" alt="Instagram Icon" style="height:2em;width:2em;display:block;margin-right:0.5em;" />
+  <img src="../Images/Instagram_Icon.PNG" alt="Instagram Icon" style="height:2em;width:2em;display:block;margin-right:0.5em;" />
   <span class="footer-instagram-text">Instagram</span>
       </a>
       <p style="margin-left:2.5em;">Georgia Tech Running Club &copy; 2025</p>
@@ -112,17 +113,7 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle with a11y
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    }
+  <script src="js/index.js" defer></scriptsrc>>
   </script>
 </body>
 </html>
