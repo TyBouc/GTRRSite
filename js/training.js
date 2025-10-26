@@ -1,7 +1,7 @@
 // Google Apps Script endpoint URLs
 const shortURL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLj17DwOBqKGUCqMuhWEoU-IR04pw_RLXFCfIKaODHo-H97v6JvVgq0USZk2AuviCNT453ar5r4JldE8e3f3Dc7E_EuzzhbqxKZzfPFrgkR0GndQ5jaNX9E__GhoTlGJBd-NJdzXwAMvtRCMnF2glFtn2SE_vWOGMKPicix9htKfqG3LK8kzXm4dsr0uIYP72FnHZhsjiNtTOp6yD5_Ylw2_hlRKf_tkrlHJdoepuLdS6Lmw4RGqNsaVZgaPw7couXH_qSEXSes-N5XhUctxEmD-ex2Lf5I7ezhgW3e0&lib=MFIn001NRq5VrBW4hotLJniJkt3D8Y0Py';
-const mediumURL = 'fill';
-const longURL = 'fill';
+const mediumURL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhSVFrT2xZX6ri4ZGkGMFOHp9xXQlO6hRft8o0hgqnQ3HXIInjFyF72eolAUpC0dkjzrabEM9uf-wzxOAYwfZMPuWIXsszOQNv71fM6YIzQCUThlg6mPqLJ-U1PstNn4PhwPAAoFih51m3d1LtAxFBGRoY3l4SYo6_l96TvLAfd_V5u23ehlLZTW9VtTCprE8gwvlU1Q2ee4lG2YAqJ_oIPT8li4Si-TheyzRKOnwaf4fv9oafOyjKSyXT0469wZ8S5QXB7hu1sXGhoov-cLWnhnBhU4H_ZMWOgIKc7&lib=MFIn001NRq5VrBW4hotLJniJkt3D8Y0Py';
+const longURL = 'https://script.google.com/macros/s/AKfycbyru7IFox99NXLTwFNaHzoYbmSTYIkvp-5xWtuLEWPzlSy77gTIkxqg8hwKMWT_OdYYHw/exec';
 const sprintURL = 'fill';
 const liftURL = 'fill';
 
